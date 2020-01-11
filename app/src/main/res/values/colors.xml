@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorPrimaryGreen">#2E8B57</color>
+    <color name="colorPrimaryDarkGreen">#006400</color>
+    <color name="colorAccentGreen">#6B8E23</color>
+    <color name="colorTextGreen">#32CD32</color>
+
+    <color name="DeepSkyBlue">#00BFFF</color>
+    <color name="DodgerBlue">#1E90FF</color>
+    <color name="PowderBlue">#B0E0E6</color>
+    <color name="Aquamarine">#7FFFD4</color>
+
+    <color name="DarkSlateGrey">#2F4F4F</color>
+    <color name="LightSlateGray">#778899</color>
+    <color name="Silver">#C0C0C0</color>
+    <color name="Black">#000000</color>
+</resources>

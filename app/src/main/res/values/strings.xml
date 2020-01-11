@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ChangeColor</string>
+    <string name="OK">Ok</string>
+    <string name="Txt">Мы русские с нами бог!</string>
+    <string-array name="colorName">
+        <item>Black</item>
+        <item>Green</item>
+        <item>Blue</item>
+    </string-array>
+    <string-array name="Lang">
+        <item>ru</item>
+        <item>eng</item>
+    </string-array>
+</resources>
