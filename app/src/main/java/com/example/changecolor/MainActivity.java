@@ -2,8 +2,6 @@ package com.example.changecolor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -11,13 +9,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.Locale;
 
-public class MainActivity extends Activity implements View.OnClickListener  {
-    Spinner sLang;
-    Spinner sColor;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
+    private Spinner sLang;
+    private Spinner sColor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,39 +30,33 @@ public class MainActivity extends Activity implements View.OnClickListener  {
 
     @Override
     public void onClick(View v) {
+        if ( sColor.getSelectedItem().toString().equals("Black")) {
+            Utils.changeToTheme(this, Utils.THEME_BLACK);
+        } else if (sColor.getSelectedItem().toString().equals("Blue")) {
 
-        switch (v.getId())
-        {
+            Utils.changeToTheme(this, Utils.THEME_BLUE);
+        } else if (sColor.getSelectedItem().toString().equals("Green")) {
 
-            case R.id.btn:
-                if ( sColor.getSelectedItem().toString().equals("Black")) {
-                    Utils.changeToTheme(this, Utils.THEME_BLACK);
-                } else if (sColor.getSelectedItem().toString().equals("Blue")) {
-
-                    Utils.changeToTheme(this, Utils.THEME_BLUE);
-                } else if (sColor.getSelectedItem().toString().equals("Green")) {
-
-                    Utils.changeToTheme(this, Utils.THEME_GREEN);
-                }
-                if(sLang.getSelectedItem().toString().equals("eng")) {
-                    Locale locale = new Locale("eng");
-                    changeLocale(locale);
-                }else if(sLang.getSelectedItem().toString().equals("ru")){
-                    Locale locale = new Locale("ru");
-                    changeLocale(locale);
-
-                }
+            Utils.changeToTheme(this, Utils.THEME_GREEN);
+        }
+        String englishItem = "eng";
+        String russianItem = "ru";
+        if (sLang.getSelectedItem().toString().equals(englishItem)) {
+            changeLocale(englishItem);
+        } else if (sLang.getSelectedItem().toString().equals(russianItem)) {
+            changeLocale(russianItem);
         }
     }
 
     private void initViews(){
-        sLang = findViewById(R.id.Spinner);
-        sColor = findViewById(R.id.SpinnerColor);
+        sLang = findViewById(R.id.spinner);
+        sColor = findViewById(R.id.spinnerColor);
+
         initSpinnerLeng();
         initSpinnerColor();
     }
     private void initSpinnerLeng(){
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Lang, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.lang, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sLang.setAdapter(adapter);
     }
@@ -76,7 +66,8 @@ public class MainActivity extends Activity implements View.OnClickListener  {
         sColor.setAdapter(adapterColor);
     }
     @SuppressWarnings("deprecation")
-    private void changeLocale(Locale locale) {
+    private void changeLocale(String language) {
+        Locale locale = new Locale(language);
         Locale.setDefault(locale);
         Configuration configuration = new Configuration();
         configuration.setLocale(locale);
@@ -88,7 +79,7 @@ public class MainActivity extends Activity implements View.OnClickListener  {
         setTitle(R.string.app_name);
 
         TextView txt = findViewById(R.id.textView);
-        txt.setText(R.string.Txt);
+        txt.setText(R.string.txt);
     }
 
 }
