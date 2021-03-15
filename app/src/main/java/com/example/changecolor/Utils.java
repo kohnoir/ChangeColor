@@ -11,10 +11,6 @@ public class Utils
     public final static int THEME_BLUE = 2;
     public final static int THEME_GREEN = 3;
 
-
-    /**
-     * Set the theme of the Activity, and restart it by creating a new Activity of the same type.
-     */
     public static void changeToTheme(Activity activity, int theme)
     {
         sTheme = theme;
@@ -23,8 +19,7 @@ public class Utils
         activity.startActivity(new Intent(activity, activity.getClass()));
 
     }
-
-    /** Set the theme of the activity, according to the configuration. */
+    
     public static void onActivityCreateSetTheme(Activity activity)
     {
         switch (sTheme)

@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initViews(){
         sLang = findViewById(R.id.spinner);
-        sColor = findViewById(R.id.spinnerColor);
+        sColor = findViewById(R.id.spinner_color);
 
         initSpinnerLeng();
         initSpinnerColor();
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 .getDisplayMetrics());
         setTitle(R.string.app_name);
 
-        TextView txt = findViewById(R.id.textView);
+        TextView txt = findViewById(R.id.text_view);
         txt.setText(R.string.txt);
     }
 
